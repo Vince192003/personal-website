@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+    content="width=device-width, initial-scale=1.0">
+    <title>MY PERSONAL WEBSITE</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
+        </style>
+        <script>
+ document.addEventListener("DOMContentLoaded", function() {
+   
+    const navLinks = document.querySelectorAll('.navbar a');
+
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            navLinks.forEach(navLink => navLink.classList.remove('active'));
+            this.classList.add('active');
+            const targetId = this.getAttribute('href').substring(1);
+            document.getElementById(targetId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+});
+document.addEventListener("DOMContentLoaded", function() {
+    // Scroll to the home section
+    document.getElementById("home").scrollIntoView({
+        behavior: 'smooth'
+    });
+});
+/*effects sa akong MenuIcon*/
+document.addEventListener("DOMContentLoaded", function() {
+    const navLinks = document.querySelectorAll('.navbar a');
+    const menuIcon = document.getElementById('menu-icon');
+    const navbar = document.querySelector('.navbar');
+
+    menuIcon.addEventListener('click', function() {
+        navbar.classList.toggle('active');
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            navLinks.forEach(navLink => navLink.classList.remove('active'));
+            this.classList.add('active');
+            const targetId = this.getAttribute('href').substring(1);
+            document.getElementById(targetId).scrollIntoView({
+                behavior: 'smooth'
+            });
+            navbar.classList.remove('active'); // Close navbar after clicking a link
+        });
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.clickable');
+    elems.forEach(function(elem) {
+        elem.addEventListener('click', function() {
+            this.classList.toggle('fullscreen');
+        });
+    });
+
+    var closeButtons = document.querySelectorAll('.close-btn');
+    closeButtons.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            this.parentNode.classList.remove('fullscreen');
+        });
+    });
+});
+   
+
+        </script>
+        
+</head>
+<body>
+<header class="header">
+    <a href="#home" class="logo">Vince<span>Web</span></a>
+
+    <i class='bx bx-menu' id="menu-icon"></i>
+
+    <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#preferences">Preferences</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="home" id="home">
+    <div class="home-img">
+        <img src="img3.jpg" alt="">
+    </div>
+    <div class="home-content">
+        <h1>Hi, It's <span>Vince</span></h1>
+        <h3 class="text-animation">I'm a <span></span></h3>
+        <p>Hey, I'm Vincent Jay Lumacad, and I just made my own website! It was my first dive into coding, using Python, Java, HTML, CSS, JavaScript, and React.js. Building it was both challenging and fun. From choosing colors to adding buttons, every step was a learning experience. It's not perfect, but I'm proud of what I've created. Can't wait to see where this coding journey takes me next!</p>
+
+        <div class="social-icon">
+            <a href="https://web.facebook.com/vincentjay.192003/"><i class='bx bxl-facebook-circle'></i></a>
+            <a href="https://www.messenger.com/t/your_messenger_username"><i class='bx bxl-messenger'></i></a>
+            <a href="https://web.facebook.com/vincentjay.192003/"><i class='bx bxl-instagram'></i></a>
+            <a href="https://www.tiktok.com/@daks_vince0?is_from_webapp=1&sender_device=pc"><i class='bx bxl-tiktok'></i></a>
+        </div>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <div class="about-content">
+        <h2 class="heading">About <span>Me</span></h2>
+        <h3 class="text-animation">
+            <span></span>
+        </h3>
+        <p><strong>Hi, I'm Vincent Jay, a 20 year old second year BCSC student at JRMSU Katipunan. I love diving into coding projects and exploring new technologies. Python, Java, HTML, CSS, JavaScript, and React.js are my go-to languages. Building my personal website has been a fun challenge, and it's just the start of my coding journey. I'm always eager to learn and share what I know with others. Let's code together</p>
+    </div>
+    <div class="about-img">
+        <img src="img5.jpg" alt="">
+    </div>
+</section>
+
+<section class="gallery" id="gallery">
+    <div class="gallery-header">My <span>Photos</span></div>
+    <div class="gallery-container">
+        <div class="img-container img1 clickable">
+            <button class="close-btn"><i class='bx bx-x'></i></button>
+        </div>
+        <div class="img-container img2 clickable">
+            <button class="close-btn"><i class='bx bx-x'></i></button>
+        </div>
+        <div class="img-container img3 clickable">
+            <button class="close-btn"><i class='bx bx-x'></i></button>
+        </div>
+        <div class="img-container img4 clickable">
+            <button class="close-btn"><i class='bx bx-x'></i></button>
+        </div>
+        <div class="img-container img5 clickable">
+            <button class="close-btn"><i class='bx bx-x'></i></button>
+        </div>
+        <div class="img-container img6 clickable">
+            <button class="close-btn"><i class='bx bx-x'></i></button>
+        </div>
+    
+    </div>
+    <a href="URL_TO_MORE_PHOTOS">
+        <button class="see-more-btn">See More Photos</button>
+    </a>
+</section>
+
+<section class="preferences" id="preferences">
+<div class="container">
+   
+    <div class="section">
+        <h1 class="section-title">Favorites</h1>
+        <div class="item">
+            <img src="peborit2.jpg" alt="Favorite 1" onclick="zoomImage(this)">
+            <h2>Ice Cream</h2>
+            <p>Enjoying a scoop of ice cream is a small joy I truly treasure. Whether it's a warm day or a quiet evening..</p>
+        </div>
+        <div class="item">
+            <img src="preborit1.jpg" alt="Favorite 2">
+            <h2>Pizza</h2>
+            <p>Pizza yummy! I love it! Crunchy bread, cheesy, tasty! Eat with friends, happy time!.</p>
+        </div>
+    </div>
+<div class="section">
+    <h1 class="section-title">Hobbies</h1>
+    <div class="item">
+        <img src="hobbies1.jpg" alt="Hobby 1">
+        <h2>Mobile Legends</h2>
+        <p>"Playing Mobile Legends is simply a source of joy for me. It's not about competition or strategy.".</p>
+    </div>
+    <div class="item">
+        <img src="hobbies2.jpg" alt="Hobby 2">
+        <h2>Codding</h2>
+        <p>"Enjoying coding and continuously learning.".</p>
+    </div>   
+</section>
+
+<section class="contact" id="contact">
+    <div class="contact container">
+      <div>
+        <h1 class="section-title">Contact <span>info</span></h1>
+        <h2>keep in touch with me</h2>
+      </div>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png" /></div>
+          <div class="contact-info">
+            <h1>Phone</h1>
+            <h2>09383066438</h2>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" /></div>
+          <div class="contact-info">
+            <h1>Email</h1>
+                <h2>lumacadvincentjay@gmail.com</h2>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" /></div>
+          <div class="contact-info">
+            <h1>Address</h1>
+            <h2>San Juan Upper Sergio Osmeña ZN.</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+   
+<footer class="footer">
+<div class="social-icon">
+    <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+    <a href="#"><i class='bx bxl-messenger'></i></a>
+    <a href="#"><i class='bx bxl-instagram'></i></a>
+    <a href="#"><i class='bx bxl-tiktok'></i></a>
+</div>
+
+<ul class="classList">
+<li>
+ <a href="#">FAQ</a>
+</li>
+
+<li>
+    <a href="#gallery">Gallery</a>
+</li>
+
+<li>
+    <a href="#about">About</a>
+   </li>
+
+   <li>
+    <a href="#contact">Contact</a>
+   </li>
+
+   <li>
+    <a href="#preferences">Preferences</a>
+   </li>
+</ul>
+<p class="copyrigth">@VinceWeb | All Rigths Reverved</p>
+</footer>
+</body>
+</html>
